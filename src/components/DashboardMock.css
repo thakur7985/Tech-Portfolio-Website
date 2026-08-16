@@ -1,0 +1,35 @@
+.dash{
+  background:var(--panel); border:1px solid var(--line-strong); border-radius:18px;
+  box-shadow:0 30px 80px -30px rgba(0,0,0,0.6);
+  overflow:hidden;
+  animation:floaty 6s ease-in-out infinite;
+}
+@keyframes floaty{0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)}}
+.dash-top{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 18px; border-bottom:1px solid var(--line);
+}
+.dash-dots{display:flex; gap:6px;}
+.dash-dots span{width:9px; height:9px; border-radius:50%; background:var(--line-strong);}
+.dash-title{font-family:'JetBrains Mono'; font-size:12px; color:var(--text-faint);}
+.dash-live{display:flex; align-items:center; gap:6px; font-family:'JetBrains Mono'; font-size:11px; color:var(--teal);}
+.dash-live i{width:7px; height:7px; border-radius:50%; background:var(--teal); display:block; animation:pulse 1.6s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:1} 50%{opacity:.25}}
+.dash-body{padding:20px; display:grid; gap:16px;}
+.dash-stats{display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px;}
+.dash-stat{background:var(--panel-2); border:1px solid var(--line); border-radius:10px; padding:12px 14px;}
+.dash-stat .label{font-family:'JetBrains Mono'; font-size:10.5px; color:var(--text-faint); text-transform:uppercase; letter-spacing:.06em;}
+.dash-stat .num{font-family:'Space Grotesk'; font-size:22px; font-weight:700; margin-top:4px;}
+.dash-stat .num.t{color:var(--teal);} .dash-stat .num.o{color:var(--orange);} .dash-stat .num.a{color:var(--amber);}
+.dash-chart{background:var(--panel-2); border:1px solid var(--line); border-radius:10px; padding:16px; display:flex; align-items:flex-end; gap:8px; height:100px;}
+.dash-chart .bar{flex:1; background:linear-gradient(180deg,var(--teal),var(--teal-dim)); border-radius:4px 4px 0 0; animation:grow 1.8s ease forwards; transform:scaleY(0); transform-origin:bottom;}
+@keyframes grow{from{transform:scaleY(0)} to{transform:scaleY(1)}}
+.dash-list{display:grid; gap:8px;}
+.dash-row{display:flex; align-items:center; justify-content:space-between; background:var(--panel-2); border:1px solid var(--line); border-radius:8px; padding:9px 12px;}
+.dash-row .r-name{font-size:12.5px; display:flex; align-items:center; gap:8px;}
+.dash-row .r-dot{width:6px; height:6px; border-radius:50%; background:var(--amber);}
+.dash-row .r-status{font-family:'JetBrains Mono'; font-size:10.5px; color:var(--teal); background:rgba(62,214,181,0.1); padding:2px 8px; border-radius:999px;}
+
+@media (max-width:560px){
+  .dash-stats{grid-template-columns:1fr;}
+}

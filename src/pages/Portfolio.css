@@ -1,0 +1,62 @@
+.pf-filters{
+  display:flex; flex-wrap:wrap; gap:10px; margin-bottom:34px;
+}
+.pf-filter{
+  padding:9px 18px; border-radius:999px;
+  background:transparent; border:1px solid var(--line-strong);
+  color:var(--text-soft); font-size:13.5px; font-weight:600; cursor:pointer;
+  transition:all .25s ease;
+}
+.pf-filter:hover{ color:var(--teal); border-color:var(--teal); }
+.pf-filter.active{ background:var(--teal); color:#fff; border-color:var(--teal); }
+
+.pf-grid{
+  display:grid; grid-template-columns:repeat(3, 1fr); gap:24px;
+}
+.pf-card{
+  background:var(--panel-2);
+  border:1px solid var(--line-strong);
+  border-radius:18px; overflow:hidden;
+  display:flex; flex-direction:column;
+  transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+.pf-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 30px 60px -24px rgba(0,0,0,0.6);
+  border-color:var(--teal);
+}
+.pf-thumb{
+  position:relative; height:200px; overflow:hidden;
+}
+.pf-thumb img{
+  width:100%; height:100%; object-fit:cover; object-position:top center;
+  transition:transform .6s ease;
+}
+.pf-card:hover .pf-thumb img{ transform:scale(1.07); }
+.pf-cat{
+  position:absolute; top:14px; left:14px;
+  font-family:'JetBrains Mono', monospace; font-size:10.5px; letter-spacing:.06em;
+  text-transform:uppercase; padding:5px 10px; border-radius:999px;
+  background:rgba(5,5,22,0.7); color:var(--teal); border:1px solid rgba(18,168,242,.3);
+}
+.pf-body{ padding:22px 22px 24px; display:flex; flex-direction:column; flex:1; }
+.pf-body h3{ font-size:19px; margin-bottom:10px; }
+.pf-body p{ font-size:14px; color:var(--text-soft); line-height:1.6; margin-bottom:16px; flex:1; }
+.pf-tech{ display:flex; flex-wrap:wrap; gap:7px; margin-bottom:18px; }
+.pf-tech span{
+  font-size:11.5px; padding:4px 10px; border-radius:999px;
+  background:var(--panel); border:1px solid var(--line); color:var(--text-soft);
+}
+.pf-visit{
+  font-size:14px; font-weight:600; color:var(--teal);
+  transition:gap .2s ease, opacity .2s ease;
+}
+.pf-visit:hover{ text-decoration:underline; }
+.pf-visit-soon{ color:var(--text-faint); font-weight:500; }
+
+@media (max-width:980px){
+  .pf-grid{ grid-template-columns:repeat(2, 1fr); }
+}
+@media (max-width:640px){
+  .pf-grid{ grid-template-columns:1fr; }
+}

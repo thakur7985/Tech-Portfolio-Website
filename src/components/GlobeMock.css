@@ -1,0 +1,72 @@
+.globe-card{
+  display:flex; align-items:center; justify-content:center;
+  animation:globe-float 6s ease-in-out infinite;
+}
+@keyframes globe-float{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-14px);}
+}
+
+.globe-stage{
+  position:relative;
+  height:440px; width:440px;
+  display:flex; align-items:center; justify-content:center;
+}
+.globe-sphere{
+  width:310px; height:310px; border-radius:50%;
+  background-size:cover;
+  background-position:center;
+  border:1px solid var(--line-strong);
+  position:relative; overflow:hidden;
+  box-shadow: inset -19px -20px 46px rgba(0, 0, 0, 0.45), 0 0 80px rgb(39 29 187 / 35%);
+  z-index:1;
+}
+.globe-sphere::before{
+  content:'';
+  position:absolute; inset:0; border-radius:50%;
+  background:radial-gradient(circle at 32% 28%, rgba(255,255,255,0.28), transparent 45%);
+  pointer-events:none;
+}
+
+.orbit-ring{
+  position:absolute; width:378px; height:378px;
+  border:1px dashed var(--line-strong); border-radius:50%;
+  animation:orbit-spin 9s linear infinite;
+}
+.orbit-ring::before{
+  content:'';
+  position:absolute; inset:20px;
+  border:1px dashed var(--line);
+  border-radius:50%;
+}
+.orbit-dot{
+  position:absolute; top:-4px; left:50%; width:9px; height:9px; margin-left:-4.5px;
+  border-radius:50%; background:var(--teal); box-shadow:0 0 12px var(--teal);
+}
+@keyframes orbit-spin{
+  from{transform:rotate(0deg);}
+  to{transform:rotate(360deg);}
+}
+
+.globe-pin{
+  position:absolute; width:9px; height:9px; border-radius:50%;
+  background:var(--amber); box-shadow:0 0 12px var(--amber);
+  animation:globe-pulse 1.8s ease-in-out infinite;
+}
+.globe-pin.p1{ top:158px; left:158px; }
+.globe-pin.p2{ top:196px; right:98px; animation-delay:.5s; }
+.globe-pin.p3{ bottom:98px; left:148px; animation-delay:1s; }
+
+@keyframes globe-pulse{
+  0%,100%{opacity:1; transform:scale(1);}
+  50%{opacity:.35; transform:scale(1.5);}
+}
+
+@media (max-width:560px){
+  .globe-stage{width:300px; height:300px;}
+  .globe-sphere{width:210px; height:210px;}
+  .orbit-ring{width:258px; height:258px;}
+  .globe-pin.p1{ top:108px; left:108px; }
+  .globe-pin.p2{ top:134px; right:66px; }
+  .globe-pin.p3{ bottom:66px; left:100px; }
+}

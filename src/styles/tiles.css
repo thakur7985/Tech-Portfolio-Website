@@ -1,0 +1,33 @@
+/* Shared photo-style tile cards — used on Home, Services and Solutions pages */
+.svc-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+.svc-card{
+  position:relative; border-radius:16px; overflow:hidden;
+  min-height:230px; padding:22px;
+  display:flex; flex-direction:column; justify-content:flex-end;
+  border:1px solid var(--line);
+  transition:transform .3s ease, box-shadow .3s ease;
+  scroll-margin-top:110px;
+}
+.svc-card:hover{transform:translateY(-6px); box-shadow:0 24px 50px -20px rgba(0,0,0,0.55);}
+.svc-icon{position:absolute; top:20px; left:20px; font-size:26px; opacity:0.95;}
+.svc-arrow{
+  position:absolute; top:20px; right:20px; width:34px; height:34px; border-radius:50%;
+  background:rgba(255,255,255,0.16); backdrop-filter:blur(4px);
+  display:flex; align-items:center; justify-content:center; color:#fff; font-size:15px;
+  transition:background .25s ease, transform .25s ease;
+}
+.svc-card:hover .svc-arrow{background:rgba(255,255,255,0.3); transform:translate(2px,-2px);}
+.svc-card h3{font-size:18px; color:#fff; margin-bottom:6px;}
+.svc-card p{font-size:13px; color:rgba(255,255,255,0.82);}
+
+/* Page hero banner — used on inner pages (Services, Solutions, Portfolio, etc.) */
+.page-hero{padding:160px 0 30px;}
+.page-hero h1{font-size:clamp(30px,4vw,46px); margin-bottom:14px;}
+.page-hero p{color:var(--text-soft); font-size:16.5px; max-width:600px;}
+
+@media (max-width:900px){
+  .svc-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media (max-width:560px){
+  .svc-grid{grid-template-columns:1fr;}
+}
