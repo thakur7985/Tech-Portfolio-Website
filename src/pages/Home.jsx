@@ -129,7 +129,7 @@ export default function Home() {
             </p>
             <div className="hero-ctas">
               <Link to="/#contact" className="btn btn-primary">Get a free quote</Link>
-              <Link to="/about" className="btn btn-ghost">Learn more about us</Link>
+              {/* <Link to="/about" className="btn btn-ghost">Learn more about us</Link> */}
             </div>
           </Reveal>
 
