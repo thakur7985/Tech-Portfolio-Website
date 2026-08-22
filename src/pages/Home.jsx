@@ -179,8 +179,8 @@ export default function Home() {
       <section className="section projects-section" id="projects">
         <div className="wrap">
           <Reveal className="section-head">
-            <div className="eyebrow">Selected work</div>
-            <h2>What I Build</h2>
+            <div className="eyebrow">What I Build</div>
+            <h2>My Recent Work</h2>
             <p>Real, deployed projects across industries — hover a card to scroll through the live page.</p>
           </Reveal>
           <ProjectsShowcase items={PROJECTS} />
@@ -255,7 +255,7 @@ export default function Home() {
         <div className="wrap">
           <Reveal className="contact-head">
             <div className="eyebrow" style={{  }}>Let's connect</div>
-            <h2>I Want to Hear from You</h2>
+            <h2>Start Your Project</h2>
             <p className="contact-intro">
               Have a project in mind? Share a few details and I'll get back to you with the right approach, a clear timeline and a free quote — usually within one business day.
             </p>
