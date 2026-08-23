@@ -50,11 +50,11 @@ const WEB3FORMS_KEY = '455dfd47-73c3-4d6b-a646-bd325129faee'
 
 /* ---------------- SERVICES (image cards like the reference video) ---------------- */
 const SERVICES = [
-  { title: 'CRM', desc: 'Modern, responsive websites that build trust and bring in leads.', img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80' },
-  { title: 'School & College Websites', desc: 'Admissions, notices and fee portals for institutions.', img: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80' },
-  { title: 'POS', desc: 'Appointment booking, departments and doctor profiles.', img: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80' },
-  { title: 'Real Estate Website', desc: 'Property listings with map search and enquiry routing.', img: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80' },
-  { title: 'Ecommerce Website', desc: 'Storefronts with cart, payments and order management.', img: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80' },
+  { title: 'CRM SOLUTION', desc: 'Modern, responsive websites that build trust and bring in leads.', img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80' },
+  { title: 'AI CUSTOMER ASSISTANT', desc: 'Admissions, notices and fee portals for institutions.', img: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80' },
+  { title: 'POS & INVENTORY MANAGEMENT', desc: 'Appointment booking, departments and doctor profiles.', img: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80' },
+  { title: 'Real Estate ', desc: 'Property listings with map search and enquiry routing.', img: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80' },
+  { title: 'Ecommerce', desc: 'Storefronts with cart, payments and order management.', img: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80' },
   { title: 'ERP Dashboard & Admin Panel', desc: 'One dashboard connecting sales, stock, staff and finance.', img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80' },
  
 ]

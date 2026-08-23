@@ -23,10 +23,7 @@ export default function About() {
             <div className="eyebrow">About Us </div>
             <h2>Empowering Businesses with AI, Software &amp; Digital Innovation</h2>
             <p className="about-copy">
-              Is your business ready for what's next, or is an outdated setup quietly slowing you down?
-              We combine practical automation with modern design to build websites, dashboards and
-              AI-assisted tools that personalize the experience, accelerate growth and support your
-              business long-term.
+              We are a software development team focused on creating modern, innovative, and high-performance digital solutions for businesses. With experience in modern website design and development, we build everything from professional landing pages and dynamic websites to custom web applications, dashboards, and admin panels. We also develop scalable SaaS platforms and customized software tailored to specific business requirements. By combining modern technologies with AI-powered development, we create smarter, faster, and more efficient digital experiences. Our approach focuses on clean design, seamless functionality, performance, and scalability. We are currently working on an ESG and Sustainability management platform to help organizations manage their ESG activities and data more effectively. Our goal is to turn ideas into reliable, user-friendly, and future-ready digital products that create real business value.
             </p>
             <Link to="/#contact" className="btn btn-primary">Get a free quote</Link>
           </Reveal>
