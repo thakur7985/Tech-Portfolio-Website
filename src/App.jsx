@@ -7,6 +7,7 @@ import Home from './pages/Home'
 import Services from './pages/Services'
 import Solutions from './pages/Solutions'
 import Portfolio from './pages/Portfolio'
+import ProjectDetail from './pages/ProjectDetail'
 import About from './pages/About'
 import ComingSoon from './pages/ComingSoon'
 
@@ -21,6 +22,7 @@ export default function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/solutions" element={<Solutions />} />
           <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/portfolio/:slug" element={<ProjectDetail />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<ComingSoon title="Contact" />} />
         </Routes>

@@ -1,6 +1,6 @@
 /* HERO */
 .hero{
-  padding:170px 0 140px;
+  padding:120px 0 100px;
   position:relative;
   overflow:hidden;
 }
@@ -42,7 +42,7 @@
   padding:60px 0;
 }
 @media (max-width:560px){
-  .stat-bridge{ padding:40px 0; }
+  .stat-bridge{ padding:20px 0; }
 }
 .stat-bar{
   display:grid;
@@ -189,6 +189,7 @@
 .cta-banner p{color:var(--text-soft); max-width:480px; margin:0 auto 28px;}
 
 @media (max-width:900px){
+  .hero{padding:100px 0 40px;}
   .hero-inner{grid-template-columns:1fr;}
   .pf-grid{grid-template-columns:1fr;}
 }

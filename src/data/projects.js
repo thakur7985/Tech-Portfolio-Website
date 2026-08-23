@@ -14,14 +14,16 @@ import sangrill from '../assets/projects/sangrill.jpg'
 
 export const PROJECTS = [
   {
+    slug: 'college-management-system',
     title: 'College Management System',
     cat: 'College Management',
     img: ecollegeFull,
-    url: 'https://thakur7985.github.io/CMS-Frontend/',
+    url: '',
     desc: 'A college website with course listings, admissions info, events and a gallery, built for a fast-loading student-facing experience.',
     tech: ['HTML', 'CSS', 'JavaScript'],
   },
   {
+    slug: 'ngo-educational-welfare-services',
     title: 'NGO Educational & Welfare Services',
     cat: 'NGO / Education',
     img: ngoFull,
@@ -30,18 +32,20 @@ export const PROJECTS = [
     tech: ['HTML', 'CSS', 'JavaScript'],
   },
   {
+    slug: 'eggspert',
     title: 'Eggspert',
     cat: 'Restaurant',
     img: eggspertFull,
-    url: 'https://webdevmrmoon.github.io/eggspert/',
+    url: '',
     desc: 'An all-day breakfast restaurant site with a menu showcase, founder profiles, location map and vendor/careers sign-up forms.',
     tech: ['HTML', 'CSS', 'JavaScript'],
   },
   {
+    slug: 'sangrill',
     title: 'Sangrill',
     cat: 'Restaurant & Cafe',
     img: sangrill,
-    url: 'https://thakur7985.github.io/Sangrill/index.html',
+    url: '',
     desc: 'A vegetarian hangout spot in Ballia with a hero carousel, food showcase grid, birthday booking, and a live location map.',
     tech: ['HTML', 'CSS', 'JavaScript'],
   },

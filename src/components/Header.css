@@ -1,19 +1,25 @@
 .site-header{
   position:fixed; top:0; left:0; right:0; z-index:1000;
-  background:rgba(11,18,32,0); backdrop-filter:blur(0px);
   border-bottom:1px solid transparent;
-  transition:background .3s ease, backdrop-filter .3s ease, border-color .3s ease;
+  transition:border-color .3s ease;
+  isolation:isolate;
 }
-.site-header.scrolled{
+
+.site-header::before{
+  content:''; position:absolute; inset:0; z-index:-1;
+  background:rgba(11,18,32,0); backdrop-filter:blur(0px);
+  transition:background .3s ease, backdrop-filter .3s ease;
+}
+.site-header.scrolled{ border-bottom:1px solid var(--line); }
+.site-header.scrolled::before{
   background:rgba(11,18,32,0.75); backdrop-filter:blur(14px);
-  border-bottom:1px solid var(--line);
 }
 /* Solid background the instant the mobile menu opens, even if the page
    hasn't been scrolled yet — otherwise the panel can read as "missing"
    against a transparent header on a busy hero background. */
-.site-header.menu-open{
+.site-header.menu-open{ border-bottom:1px solid var(--line); }
+.site-header.menu-open::before{
   background:rgba(11,18,32,0.98); backdrop-filter:blur(14px);
-  border-bottom:1px solid var(--line);
 }
 /* While the mobile panel is open, keep the floating WhatsApp button and
    social rail from floating on top of it (they live outside <header> at

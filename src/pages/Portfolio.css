@@ -40,7 +40,7 @@
   background:rgba(5,5,22,0.7); color:var(--teal); border:1px solid rgba(18,168,242,.3);
 }
 .pf-body{ padding:22px 22px 24px; display:flex; flex-direction:column; flex:1; }
-.pf-body h3{ font-size:19px; margin-bottom:10px; }
+.pf-body h3{ font-size:19px; margin-bottom:10px; color: #12A8F2;}
 .pf-body p{ font-size:14px; color:var(--text-soft); line-height:1.6; margin-bottom:16px; flex:1; }
 .pf-tech{ display:flex; flex-wrap:wrap; gap:7px; margin-bottom:18px; }
 .pf-tech span{

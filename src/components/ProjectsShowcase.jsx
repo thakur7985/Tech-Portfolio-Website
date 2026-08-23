@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 import './ProjectsShowcase.css'
 
 /**
@@ -73,7 +74,9 @@ export default function ProjectsShowcase({ items: projects }) {
                 Visit project →
               </a>
             ) : (
-              <span className="pj-link pj-link-soon">Live link coming soon</span>
+              <Link className="pj-link" to={`/portfolio/${p.slug}`}>
+                Read more →
+              </Link>
             )}
           </div>
         </div>

@@ -56,7 +56,9 @@ export default function Portfolio() {
                       Visit project →
                     </a>
                   ) : (
-                    <span className="pf-visit pf-visit-soon">Live link coming soon</span>
+                    <Link className="pf-visit" to={`/portfolio/${p.slug}`}>
+                      Read more →
+                    </Link>
                   )}
                 </div>
               </Reveal>
