@@ -93,7 +93,6 @@ export default function Home() {
               We design and develop high-performing websites and custom software that automate your workflows and accelerate business growth.
             </p>
             <div className="hero-ctas">
-              <Link to="/#contact" className="btn btn-primary">Get a free quote</Link>
               <Link to="/portfolio" className="btn btn-ghost">See recent work</Link>
             </div>
           </div>
@@ -119,7 +118,7 @@ export default function Home() {
       <section className="section about-section" id="about">
         <div className="wrap about-grid">
           <Reveal>
-            <div className="eyebrow">Your digital partners in growth</div>
+            <div className="eyebrow">About us </div>
             <h2>Empowering Businesses with AI, Software &amp; Digital Innovation</h2>
             <p className="about-copy">
               Is your business ready for what's next, or is an outdated setup quietly slowing you down?
