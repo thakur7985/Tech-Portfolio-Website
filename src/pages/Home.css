@@ -1,6 +1,6 @@
 /* HERO */
 .hero{
-  padding:120px 0 100px;
+  padding:200px 0 100px;
   position:relative;
   overflow:hidden;
 }
@@ -330,7 +330,13 @@
 .contact-form textarea::placeholder{ color:var(--text-faint); }
 .contact-form input:focus,
 .contact-form textarea:focus{ outline:none; border-color:var(--teal); }
-.cf-submit{ align-self:flex-start; margin-top:6px; }
+.cf-actions{ display:flex; flex-wrap:wrap; gap:14px; margin-top:6px; }
+.cf-submit{ align-self:flex-start; margin-top:0; }
+.cf-whatsapp{
+  display:inline-flex; align-items:center; gap:8px;
+  border-color:#25D366; color:#25D366;
+}
+.cf-whatsapp:hover{ background:#25D366; color:#fff; border-color:#25D366; }
 
 /* ============ RESPONSIVE ============ */
 @media (max-width:900px){

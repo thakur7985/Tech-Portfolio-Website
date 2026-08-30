@@ -26,6 +26,7 @@
    higher z-indexes). */
 body.nav-open{ overflow:hidden; }
 body.nav-open .wa-float,
+body.nav-open .ai-faq-widget,
 body.nav-open .social-sidebar{ display:none; }
 .nav{
   display:flex; align-items:center; justify-content:space-between;
@@ -153,7 +154,7 @@ body.nav-open .social-sidebar{ display:none; }
     background:transparent;
     max-height:0; overflow:hidden; opacity:1; pointer-events:auto;
   }
-  .mega-menu.open{max-height:600px;}
+  .mega-menu.open{max-height:600px; transform:none;}
   .mega-menu-columns{grid-template-columns:1fr; gap:4px;}
   .mega-col-title{margin-top:10px;}
   .mega-viewall{border-top:none; padding-top:8px;}

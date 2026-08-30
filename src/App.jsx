@@ -1,7 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import WhatsAppButton from './components/WhatsAppButton'
 import SocialSidebar from './components/SocialSidebar'
 import Home from './pages/Home'
 import Services from './pages/Services'
@@ -10,6 +9,7 @@ import Portfolio from './pages/Portfolio'
 import ProjectDetail from './pages/ProjectDetail'
 import About from './pages/About'
 import ComingSoon from './pages/ComingSoon'
+import AIFaqWidget from './components/AIFaqWidget'
 
 export default function App() {
   return (
@@ -28,7 +28,7 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
-      <WhatsAppButton />
+      <AIFaqWidget />
     </>
   )
 }

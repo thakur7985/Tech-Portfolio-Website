@@ -19,7 +19,7 @@ export const PROJECTS = [
     cat: 'College Management',
     img: ecollegeFull,
     url: '',
-    desc: 'A college website with course listings, admissions info, events and a gallery, built for a fast-loading student-facing experience.',
+    desc: 'Educational institutions often struggle with scattered information across course brochures, admission notices, and event flyers. This college website solves that by centralizing course listings, admissions details, campus events, and a photo gallery into one fast, student-friendly platform — making it easier for prospective students and parents to find what they need without digging through paperwork or making phone calls.',
     tech: ['HTML', 'CSS', 'JavaScript'],
   },
   {
@@ -28,7 +28,7 @@ export const PROJECTS = [
     cat: 'NGO / Education',
     img: ngoFull,
     url: '',
-    desc: "A nonprofit website focused on children's education, with donation flows, impact stats, and a volunteer/vendor registration system.",
+    desc: "Nonprofits need to build trust quickly to convert visitors into donors and volunteers. This website addresses that by pairing a clear mission statement with transparent impact statistics, a streamlined donation flow, and dedicated registration systems for volunteers and vendors — turning a simple informational site into an active engagement and fundraising tool for children's education programs.",
     tech: ['HTML', 'CSS', 'JavaScript'],
   },
   {
@@ -37,7 +37,7 @@ export const PROJECTS = [
     cat: 'Restaurant',
     img: eggspertFull,
     url: '',
-    desc: 'An all-day breakfast restaurant site with a menu showcase, founder profiles, location map and vendor/careers sign-up forms.',
+    desc: 'A growing all-day breakfast restaurant needed an online presence that matched its in-store experience and supported hiring and vendor outreach. This site delivers that with an appetizing menu showcase, founder profiles that build brand personality, an integrated location map for easy discovery, and built-in forms for careers and vendor sign-ups — all in one lightweight, easy-to-update package.',
     tech: ['HTML', 'CSS', 'JavaScript'],
   },
   {
@@ -46,7 +46,7 @@ export const PROJECTS = [
     cat: 'Restaurant & Cafe',
     img: sangrill,
     url: '',
-    desc: 'A vegetarian hangout spot in Ballia with a hero carousel, food showcase grid, birthday booking, and a live location map.',
+    desc: 'A local vegetarian hangout in Ballia needed a digital storefront that reflects its atmosphere and drives foot traffic. The solution: an inviting hero carousel and food showcase grid to spotlight the menu visually, a birthday booking feature to capture event bookings directly, and a live location map so customers can find and reach the venue without friction.',
     tech: ['HTML', 'CSS', 'JavaScript'],
   },
 ]

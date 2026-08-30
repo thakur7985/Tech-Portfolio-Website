@@ -12,26 +12,19 @@ export default function ProjectDetail() {
   // Unknown slug → send back to the portfolio grid instead of a blank page.
   if (!project) return <Navigate to="/portfolio" replace />
 
-  const { title, cat, img, url, desc, tech } = project
+  const { title, cat, desc, tech } = project
 
   return (
     <>
       <section className="inner-hero">
-        <div className="wrap">
+        <div className="wrap" style={{ textAlign: 'center' }}>
           <Reveal>
             <Link to="/portfolio" className="pd-back">← Back to portfolio</Link>
-            <div className="eyebrow">{cat}</div>
+            <div className="eyebrow" style={{ justifyContent: 'center' }}>{cat}</div>
             <h1>{title}</h1>
-            <p>{desc}</p>
-            <div className="pd-hero-actions">
-              {url ? (
-                <a className="btn btn-primary" href={url} target="_blank" rel="noopener noreferrer">
-                  Visit live site →
-                </a>
-              ) : (
-                <span className="pd-soon">Live link coming soon</span>
-              )}
-              <Link to="/#contact" className="btn btn-ghost">Start a similar project</Link>
+            <p style={{ marginLeft: 'auto', marginRight: 'auto' }}>{desc}</p>
+            <div className="pd-hero-actions" style={{ justifyContent: 'center' }}>
+              <Link to="/#contact" className="btn btn-ghost">Start your project</Link>
             </div>
           </Reveal>
         </div>
@@ -39,18 +32,6 @@ export default function ProjectDetail() {
 
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="wrap">
-          <Reveal className="pd-shot">
-            <div className="pd-browserbar"><span /><span /><span /></div>
-            <img src={img} alt={title} loading="lazy" />
-          </Reveal>
-
-          <Reveal className="pd-content">
-            <div className="pd-main">
-              <h2>About this project</h2>
-              <p>{desc}</p>
-            </div>
-          </Reveal>
-
           <Reveal className="inner-cta">
             <h2>Want something like this?</h2>
             <p>Tell me what you want to build and I'll get back to you with a plan and a free quote.</p>

@@ -6,6 +6,12 @@ import ParticleField from '../components/ParticleField'
 import ProjectsShowcase from '../components/ProjectsShowcase'
 import { PROJECTS } from '../data/projects'
 import hologramImg from '../assets/futuristic-hologram.jpg'
+import crmImg from '../assets/CRM.jpg'
+import aiImg from '../assets/AI.png'
+import posImg from '../assets/POS.jpg'
+import realEstateImg from '../assets/real-estate.png'
+import ecommerceImg from '../assets/ecommerce.png'
+import erpImg from '../assets/ERP.jpeg'
 import './Home.css'
 import '../pages/About.css'
 import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt, FaMobileAlt, FaChartLine, FaBolt, FaShieldAlt, FaPaintBrush, FaHeadset } from "react-icons/fa";
@@ -50,13 +56,12 @@ const WEB3FORMS_KEY = '455dfd47-73c3-4d6b-a646-bd325129faee'
 
 /* ---------------- SERVICES (image cards like the reference video) ---------------- */
 const SERVICES = [
-  { title: 'CRM SOLUTION', desc: 'Modern, responsive websites that build trust and bring in leads.', img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80' },
-  { title: 'AI CUSTOMER ASSISTANT', desc: 'Admissions, notices and fee portals for institutions.', img: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80' },
-  { title: 'POS & INVENTORY MANAGEMENT', desc: 'Appointment booking, departments and doctor profiles.', img: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80' },
-  { title: 'Real Estate ', desc: 'Property listings with map search and enquiry routing.', img: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80' },
-  { title: 'Ecommerce', desc: 'Storefronts with cart, payments and order management.', img: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80' },
-  { title: 'ERP Dashboard & Admin Panel', desc: 'One dashboard connecting sales, stock, staff and finance.', img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80' },
- 
+  { title: 'CRM SOLUTION', desc: 'Modern, responsive websites that build trust and bring in leads.', img: crmImg },
+  { title: 'AI CUSTOMER ASSISTANT', desc: 'Admissions, notices and fee portals for institutions.', img: aiImg },
+  { title: 'POS & INVENTORY MANAGEMENT', desc: 'Appointment booking, departments and doctor profiles.', img: posImg },
+  { title: 'Real Estate ', desc: 'Property listings with map search and enquiry routing.', img: realEstateImg },
+  { title: 'Ecommerce', desc: 'Storefronts with cart, payments and order management.', img: ecommerceImg },
+  { title: 'ERP Dashboard & Admin Panel', desc: 'One dashboard connecting sales, stock, staff and finance.', img: erpImg },
 ]
 
 /* ---------------- TECHNOLOGIES (slow marquee) ---------------- */
@@ -87,10 +92,10 @@ export default function Home() {
           <div>
             <div className="eyebrow">Web development &amp; brand design studio</div>
             <h1>
-              Dynamic Websites &amp; <span className="hl">Custom Software</span> Solutions.
+              Build Smarter Websites &amp; <span className="hl">AI-Powered Web Apps</span> That Grow Your Business
             </h1>
             <p className="lead">
-              We design and develop high-performing websites and custom software that automate your workflows and accelerate business growth.
+              We design and develop high-performing websites, AI-powered web solutions, and custom software that automate workflows, improve efficiency, and accelerate business growth.
             </p>
             <div className="hero-ctas">
               <Link to="/portfolio" className="btn btn-ghost">See recent work</Link>
@@ -220,16 +225,6 @@ export default function Home() {
             <p>A few words from people I've built for — and the numbers behind the work.</p>
           </Reveal>
 
-          {/* stat / score bar */}
-          {/* <Reveal className="testi-stats">
-            {STATS.map((s) => (
-              <div className="testi-stat" key={s.label}>
-                <div className="testi-stat-value">{s.value}</div>
-                <div className="testi-stat-label">{s.label}</div>
-              </div>
-            ))}
-          </Reveal> */}
-
           {/* testimonial cards */}
           <div className="testi-grid">
             {TESTIMONIALS.map((t, i) => (
@@ -325,9 +320,19 @@ function ContactForm() {
           <input type="text" name="subject" placeholder="Subject" />
         </div>
         <textarea name="message" placeholder="Write Your Message Here.." rows={6} required />
-        <button type="submit" className="btn btn-primary cf-submit" disabled={status === 'sending'}>
-          {status === 'sending' ? 'Sending…' : 'Send Message'}
-        </button>
+        <div className="cf-actions">
+          <button type="submit" className="btn btn-primary cf-submit" disabled={status === 'sending'}>
+            {status === 'sending' ? 'Sending…' : 'Send Message'}
+          </button>
+          <a
+            href={`https://wa.me/917985142638?text=${encodeURIComponent("Hi! I found your portfolio and I'd like to discuss a project.")}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-ghost cf-whatsapp"
+          >
+            Chat on WhatsApp
+          </a>
+        </div>
         {status === 'success' && (
           <p className="cf-msg cf-ok">✓ Thanks! Your message has been sent — I'll reply soon.</p>
         )}
@@ -338,4 +343,3 @@ function ContactForm() {
     </Reveal>
   )
 }
-
