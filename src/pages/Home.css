@@ -332,11 +332,7 @@
 .contact-form textarea:focus{ outline:none; border-color:var(--teal); }
 .cf-actions{ display:flex; flex-wrap:wrap; gap:14px; margin-top:6px; }
 .cf-submit{ align-self:flex-start; margin-top:0; }
-.cf-whatsapp{
-  display:inline-flex; align-items:center; gap:8px;
-  border-color:#25D366; color:#25D366;
-}
-.cf-whatsapp:hover{ background:#25D366; color:#fff; border-color:#25D366; }
+.cf-whatsapp{ display:inline-flex; align-items:center; gap:8px; }
 
 /* ============ RESPONSIVE ============ */
 @media (max-width:900px){
