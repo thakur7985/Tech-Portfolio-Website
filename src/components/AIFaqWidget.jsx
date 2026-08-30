@@ -24,7 +24,7 @@ function matchFaq(message) {
 const WELCOME_MESSAGE =
   "Hi! I'm TechAbhi's assistant. Ask me about services, pricing, timelines, or tech stack — or tap a suggestion below."
 
-const TEASER_MESSAGE = "Hi! I'm an AI — chat with me!"
+const TEASER_MESSAGE = "Hello! How can i help you today?"
 const TEASER_DELAY_MS = 1500
 const TEASER_AUTO_HIDE_MS = 8000
 const TEASER_SESSION_KEY = 'aiFaqTeaserShown'
