@@ -8,7 +8,7 @@
   transition:all .25s ease;
 }
 .pf-filter:hover{ color:var(--teal); border-color:var(--teal); }
-.pf-filter.active{ background:var(--teal); color:#fff; border-color:var(--teal); }
+.pf-filter.active{ background:var(--brand); color:#fff; border-color:var(--brand); }
 
 .pf-grid{
   display:grid; grid-template-columns:repeat(3, 1fr); gap:24px;

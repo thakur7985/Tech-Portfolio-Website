@@ -1,12 +1,13 @@
 /* ABOUT / EMPOWERING */
 .about-section {
   padding-top: 40px;
-  background-color: rgb(255, 255, 255);
+  background-color: var(--paper);
   color: #0B1220;                 /* dark base text for this section only */
 }
 .about-section h2{ color: #142850; }        /* heading dark */
 .about-section .about-copy{ color: #48505E; }  /* paragraph slightly softer dark */
-.about-section .eyebrow{ color: #0B1220; }
+.about-section .eyebrow{ color: var(--brand); }
+.about-section .eyebrow::before{ background: var(--brand); }
 .about-grid{
   display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;
   position:relative; z-index:1;
@@ -57,7 +58,7 @@
 .about-badge-dark p{font-size:12.5px; color:var(--text-soft);}
 .about-badge-light{
   bottom:32px; right:32px;
-  background:var(--paper); color:var(--ink);
+  background:#ffffff; color:var(--ink);
   display:flex; align-items:center; gap:12px;
 }
 .about-badge-icon{

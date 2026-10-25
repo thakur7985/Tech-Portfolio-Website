@@ -3,11 +3,16 @@
   --panel:#16233F;
   --panel-2:#111C33;
   --panel-3:#16233F;
-  --paper:#EDEFE9;
+  --paper:#F4F7FB;          /* soft bluish off-white for the light sections */
   --line:rgb(35 33 146 / 18%);
   --line-strong:rgba(237, 239, 233, 0.418);
   --teal:#12A8F2;
   --teal-dim:#0B4FD1;
+  /* deeper brand blue — used wherever text sits ON blue (white button text)
+     or blue text sits on a light background. Passes WCAG AA (5.1:1 vs white,
+     4.7:1 vs --paper); the brighter --teal is kept for accents on the dark navy. */
+  --brand:#0772B8;
+  --violet:#8B5CF6;         /* secondary accent (matches the hero image glow) */
   --orange:#FF8A3D;
   --amber:#F2C94C;
   --text:#EDEFE9;
@@ -76,9 +81,9 @@ button{font-family:inherit;}
 .btn:hover{transform:translateY(-2px);}
 
 /* PRIMARY — blue fill by default; on hover becomes white bg + blue border + blue text */
-.btn-primary{background:var(--teal); color:#ffffff; border-color:var(--teal);}
+.btn-primary{background:var(--brand); color:#ffffff; border-color:var(--brand);}
 .btn-primary:hover{
-  background:#ffffff; color:var(--teal); border-color:var(--teal);
+  background:#ffffff; color:var(--brand); border-color:var(--brand);
   box-shadow:0 10px 26px -10px rgba(18,168,242,.6);
 }
 /* GHOST — transparent by default; on hover gets blue border + blue text */
