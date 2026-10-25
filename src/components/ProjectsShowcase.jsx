@@ -18,6 +18,8 @@ function ScrollThumb({ src, alt }) {
   // 'scroll' = image is taller than the frame → pans down on hover.
   // 'cover'  = image is short/landscape → just fills the frame, no scroll.
   const [mode, setMode] = useState('cover')
+  // Touch screens have no hover, so a tap toggles the same pan animation.
+  const [playing, setPlaying] = useState(false)
 
   const measure = () => {
     const wrap = wrapRef.current
@@ -42,7 +44,13 @@ function ScrollThumb({ src, alt }) {
   }, [])
 
   return (
-    <div className="pj-thumb" ref={wrapRef}>
+    <div
+      className={playing ? 'pj-thumb playing' : 'pj-thumb'}
+      ref={wrapRef}
+      onClick={() => {
+        if (window.matchMedia('(hover: none)').matches) setPlaying((v) => !v)
+      }}
+    >
       <div className="pj-browserbar">
         <span /><span /><span />
       </div>

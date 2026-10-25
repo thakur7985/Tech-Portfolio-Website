@@ -83,7 +83,7 @@ body.nav-open .social-sidebar{ display:none; }
 .caret{font-size:10px; transition:transform .2s ease;}
 .caret.up{transform:rotate(180deg);}
 
-.nav-cta-mobile{ display:none; }
+.nav-links .nav-cta-mobile{ display:none; }
 
 /* MEGA MENU */
 .mega-menu{
@@ -159,8 +159,10 @@ body.nav-open .social-sidebar{ display:none; }
   .mega-col-title{margin-top:10px;}
   .mega-viewall{border-top:none; padding-top:8px;}
 
-  .nav-cta-mobile{
+  .nav-links .nav-cta-mobile{
     display:flex; width:100%; justify-content:center;
-    margin-top:20px;
+    margin-top:24px; flex-shrink:0;
+    color:#ffffff; font-size:15px; font-weight:600;
   }
+  .nav-links .nav-cta-mobile:hover{ color:var(--teal); }
 }

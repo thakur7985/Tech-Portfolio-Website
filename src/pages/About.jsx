@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import Reveal from '../components/Reveal'
-import hologramImg from '../assets/futuristic-hologram.jpg'
+import hologramImg from '../assets/futuristic-hologram.webp'
 import '../pages/InnerPage.css'
 import './About.css'
 

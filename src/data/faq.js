@@ -39,7 +39,7 @@ export const FAQ_DATA = [
   },
   {
     keywords: ['contact', 'reach', 'talk', 'call', 'email', 'phone', 'whatsapp', 'get in touch'],
-    answer: "Easiest way is the contact form on this site, or tap the WhatsApp button in the bottom-right corner for a quick chat.",
+    answer: "Easiest way is the contact form on this site, or use the 'Chat on WhatsApp' button next to it for a quick chat. You can also email abhishekoutlook1997@gmail.com or call +91 79851 42638.",
   },
   {
     keywords: ['crm'],
@@ -68,4 +68,4 @@ export const FAQ_DATA = [
 ]
 
 export const FAQ_FALLBACK =
-  "I don't have a canned answer for that one yet — but tap the WhatsApp button or use the contact form and I'll get back to you personally."
+  "I don't have a canned answer for that one yet — but use the contact form or WhatsApp me (+91 79851 42638) and I'll get back to you personally."

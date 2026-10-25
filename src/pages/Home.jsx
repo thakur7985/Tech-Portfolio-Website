@@ -5,24 +5,16 @@ import Reveal from '../components/Reveal'
 import ParticleField from '../components/ParticleField'
 import ProjectsShowcase from '../components/ProjectsShowcase'
 import { PROJECTS } from '../data/projects'
-import hologramImg from '../assets/futuristic-hologram.jpg'
-import crmImg from '../assets/CRM.jpg'
-import aiImg from '../assets/AI.png'
-import posImg from '../assets/POS.jpg'
-import realEstateImg from '../assets/real-estate.png'
-import ecommerceImg from '../assets/ecommerce.png'
-import erpImg from '../assets/ERP.jpeg'
+import hologramImg from '../assets/futuristic-hologram.webp'
+import crmImg from '../assets/CRM.webp'
+import aiImg from '../assets/AI.webp'
+import posImg from '../assets/POS.webp'
+import realEstateImg from '../assets/real-estate.webp'
+import ecommerceImg from '../assets/ecommerce.webp'
+import erpImg from '../assets/ERP.webp'
 import './Home.css'
 import '../pages/About.css'
 import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt, FaMobileAlt, FaChartLine, FaBolt, FaShieldAlt, FaPaintBrush, FaHeadset } from "react-icons/fa";
-
-/* ---------------- TESTIMONIALS ---------------- */
-const STATS = [
-  { value: '50+', label: 'Projects Delivered' },
-  { value: '3+', label: 'Years in Industry' },
-  { value: '98%', label: 'Customer Retention' },
-  { value: '20+', label: 'Happy Clients' },
-]
 
 const FEATURES = [
   { icon: <FaMobileAlt />, title: 'Mobile Responsive' },
@@ -56,10 +48,10 @@ const WEB3FORMS_KEY = '455dfd47-73c3-4d6b-a646-bd325129faee'
 
 /* ---------------- SERVICES (image cards like the reference video) ---------------- */
 const SERVICES = [
-  { title: 'CRM SOLUTION', desc: 'Modern, responsive websites that build trust and bring in leads.', img: crmImg },
-  { title: 'AI CUSTOMER ASSISTANT', desc: 'Admissions, notices and fee portals for institutions.', img: aiImg },
-  { title: 'POS & INVENTORY MANAGEMENT', desc: 'Appointment booking, departments and doctor profiles.', img: posImg },
-  { title: 'Real Estate ', desc: 'Property listings with map search and enquiry routing.', img: realEstateImg },
+  { title: 'CRM SOLUTION', desc: 'Track leads, follow-ups and customer history in one dashboard.', img: crmImg },
+  { title: 'AI CUSTOMER ASSISTANT', desc: 'AI chat that answers customer questions and captures leads 24/7.', img: aiImg },
+  { title: 'POS & INVENTORY MANAGEMENT', desc: 'Fast billing with stock kept in sync and daily sales reports.', img: posImg },
+  { title: 'Real Estate', desc: 'Property listings with map search and enquiry routing.', img: realEstateImg },
   { title: 'Ecommerce', desc: 'Storefronts with cart, payments and order management.', img: ecommerceImg },
   { title: 'ERP Dashboard & Admin Panel', desc: 'One dashboard connecting sales, stock, staff and finance.', img: erpImg },
 ]
@@ -185,7 +177,7 @@ export default function Home() {
           <Reveal className="section-head">
             <div className="eyebrow">What I Build</div>
             <h2>My Recent Work</h2>
-            <p>Real, deployed projects across industries — hover a card to scroll through the live page.</p>
+            <p>Real, deployed projects across industries — hover (or tap) a preview to scroll through the full page.</p>
           </Reveal>
           <ProjectsShowcase items={PROJECTS} />
           <div className="projects-viewall">

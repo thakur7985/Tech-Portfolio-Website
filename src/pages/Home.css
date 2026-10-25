@@ -341,8 +341,19 @@
 }
 @media (max-width:560px){
   .svc-grid{ grid-template-columns:1fr; }
-  .svc-content p{ max-height:80px; opacity:1; transform:none; }  /* show text on mobile */
   .cf-row{ grid-template-columns:1fr; }
+  .contact-info{ gap:24px; }
+  .ci-row{ gap:14px; }
+  .ci-icon{ width:56px; height:56px; }
+  .ci-icon svg{ width:22px; height:22px; }
+  .ci-row h4{ font-size:18px; }
+}
+/* long email/phone must wrap instead of pushing the page wider */
+.ci-row > div{ min-width:0; }
+.ci-row p{ overflow-wrap:anywhere; }
+/* touch screens have no hover — always show the card description */
+@media (hover:none){
+  .svc-content p{ max-height:80px; opacity:1; transform:none; }
 }
 
 /* ============ PROJECT CARD LINKS + VIEW ALL ============ */

@@ -45,9 +45,12 @@
   width:38px; height:38px; font-size:18px;
 }
 .svc-card-img:hover .svc-arrow{ background:var(--teal); transform:rotate(-45deg); }
-@media (max-width:560px){
+@media (hover:none){
   .svc-card-img .svc-content p{ max-height:90px; opacity:1; transform:none; }
 }
+
+/* 404 page — tall enough that the footer never tucks under the fixed header */
+.not-found{ min-height:70vh; }
 
 /* SOLUTIONS grid — dark panel cards */
 .sol-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:16px;}

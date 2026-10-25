@@ -1,5 +1,5 @@
 import './GlobeMock.css'
-import globeImg from '../assets/globe.jpg'
+import globeImg from '../assets/globe.webp'
 
 export default function GlobeMock() {
   return (

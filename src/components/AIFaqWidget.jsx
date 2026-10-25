@@ -2,6 +2,16 @@ import { useState, useRef, useEffect } from 'react'
 import { FAQ_DATA, FAQ_FALLBACK, FAQ_SUGGESTIONS } from '../data/faq'
 import './AIFaqWidget.css'
 
+// Whole-word match (plus a plural "s"/"es"), so "ai" doesn't fire on
+// "email" and "pos" doesn't fire on "possible".
+const escapeRegex = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+const KEYWORD_PATTERNS = new Map(
+  FAQ_DATA.flatMap((entry) => entry.keywords).map((kw) => [
+    kw,
+    new RegExp(`(^|[^a-z0-9])${escapeRegex(kw)}(s|es)?(?![a-z0-9])`),
+  ])
+)
+
 function matchFaq(message) {
   const text = message.toLowerCase()
   let best = null
@@ -10,7 +20,7 @@ function matchFaq(message) {
   for (const entry of FAQ_DATA) {
     let score = 0
     for (const kw of entry.keywords) {
-      if (text.includes(kw)) score += kw.split(' ').length
+      if (KEYWORD_PATTERNS.get(kw).test(text)) score += kw.split(' ').length
     }
     if (score > bestScore) {
       bestScore = score
@@ -24,7 +34,7 @@ function matchFaq(message) {
 const WELCOME_MESSAGE =
   "Hi! I'm TechAbhi's assistant. Ask me about services, pricing, timelines, or tech stack — or tap a suggestion below."
 
-const TEASER_MESSAGE = "Hello! How can i help you today?"
+const TEASER_MESSAGE = "Hello! How can I help you today?"
 const TEASER_DELAY_MS = 1500
 const TEASER_AUTO_HIDE_MS = 8000
 const TEASER_SESSION_KEY = 'aiFaqTeaserShown'

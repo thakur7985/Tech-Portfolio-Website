@@ -7,10 +7,10 @@
 //          Leave it as '' (empty) to hide the "Visit" button.
 //  - desc: short description shown on the Portfolio page.
 // ────────────────────────────────────────────────────────────────
-import ngoFull from '../assets/projects/ngo-full.jpg'
-import ecollegeFull from '../assets/projects/ecollege-full.jpg'
-import eggspertFull from '../assets/projects/eggspert-full.jpg'
-import sangrill from '../assets/projects/sangrill.jpg'
+import ngoFull from '../assets/projects/ngo-full.webp'
+import ecollegeFull from '../assets/projects/ecollege-full.webp'
+import eggspertFull from '../assets/projects/eggspert-full.webp'
+import sangrill from '../assets/projects/sangrill.webp'
 
 export const PROJECTS = [
   {

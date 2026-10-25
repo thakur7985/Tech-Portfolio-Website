@@ -191,10 +191,11 @@
 @media (max-width:560px){
   .ai-faq-widget{ right:16px; bottom:16px; }
   .ai-faq-float{ width:52px; height:52px; }
+  /* widget sits 16px from the right edge, so right:0 + this width leaves an even 16px gutter on both sides */
   .ai-faq-panel{
-    right:-16px;
+    right:0;
     width:calc(100vw - 32px);
     bottom:64px;
   }
-  .ai-faq-teaser{ right:-16px; width:220px; }
+  .ai-faq-teaser{ right:0; width:220px; }
 }

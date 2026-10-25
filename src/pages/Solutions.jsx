@@ -1,5 +1,4 @@
-import { useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Reveal from '../components/Reveal'
 import './InnerPage.css'
 
@@ -23,14 +22,6 @@ function slugify(text) {
 }
 
 export default function Solutions() {
-  const { hash } = useLocation()
-
-  useEffect(() => {
-    if (!hash) return
-    const el = document.querySelector(hash)
-    if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'center' }), 80)
-  }, [hash])
-
   return (
     <>
       <section className="inner-hero">

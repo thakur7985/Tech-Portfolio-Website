@@ -17,7 +17,7 @@ export default function Portfolio() {
           <Reveal>
             <div className="eyebrow">Selected work</div>
             <h1>Portfolio</h1>
-            <p>Real, deployed projects across industries. Click a project to view it live, or filter by category below.</p>
+            <p>Real, deployed projects across industries. Open a project to read more about it, or filter by category below.</p>
           </Reveal>
         </div>
       </section>

@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { NavLink, Link, useLocation } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import logoIcon from '../assets/logo-icon.png'
 import './Header.css'
 
@@ -51,21 +51,12 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [openMega, setOpenMega] = useState(null)
   const headerRef = useRef(null)
-  const location = useLocation()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12)
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
-
-  // Jump to a section when the URL has a hash (e.g. /#projects)
-  useEffect(() => {
-    if (location.pathname === '/' && location.hash) {
-      const el = document.querySelector(location.hash)
-      if (el) setTimeout(() => el.scrollIntoView({ block: 'start' }), 80)
-    }
-  }, [location])
 
   useEffect(() => {
     const onClickOutside = (e) => {
@@ -157,10 +148,14 @@ export default function Header() {
               )}
             </div>
           ))}
+
+          <Link to="/#contact" className="btn btn-primary nav-cta-mobile" onClick={closeAll}>
+            Start a project
+          </Link>
         </div>
 
         <div className="nav-cta">
-          <NavLink to="/#contact" className="btn btn-primary">Start a project</NavLink>
+          <Link to="/#contact" className="btn btn-primary">Start a project</Link>
         </div>
 
         <button
