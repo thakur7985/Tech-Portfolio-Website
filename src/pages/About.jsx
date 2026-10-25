@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import Reveal from '../components/Reveal'
 import hologramImg from '../assets/futuristic-hologram.webp'
+import circuitTree from '../assets/circuit-tree.webp'
 import '../pages/InnerPage.css'
 import './About.css'
 
@@ -18,6 +19,7 @@ export default function About() {
       </section>
 
       <section className="section about-section">
+        <img className="about-tree" src={circuitTree} alt="" aria-hidden="true" />
         <div className="wrap about-grid">
           <Reveal>
             <div className="eyebrow">About Us </div>

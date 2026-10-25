@@ -3,6 +3,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import SocialSidebar from './components/SocialSidebar'
 import ScrollManager from './components/ScrollManager'
+import TextAnimations from './components/TextAnimations'
 import Home from './pages/Home'
 import Services from './pages/Services'
 import Solutions from './pages/Solutions'
@@ -30,6 +31,7 @@ export default function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
+      <TextAnimations />
       <Footer />
       <AIFaqWidget />
     </>

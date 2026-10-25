@@ -1,23 +1,21 @@
 .site-footer{
   position:relative;
   overflow:hidden;
-  border-top:1px solid var(--line);
-  padding-top:60px;
-  background:var(--ink);
+  padding-top:64px;
+  /* a touch darker than the contact section above so the two read as separate */
+  background:linear-gradient(180deg, #050a1d 0%, #03060f 100%);
 }
-
-.footer-wave-bg{
-  position:absolute;
-  inset:0;
-  background-size:cover;
-  background-position:center bottom;
-  background-repeat:no-repeat;
-  filter:invert(92%) hue-rotate(180deg) saturate(1.4) brightness(0.75) contrast(1.05);
-  opacity:.16;
+/* glowing teal → purple divider along the top edge */
+.site-footer::before{
+  content:''; position:absolute; top:0; left:0; right:0; height:1px;
+  background:linear-gradient(90deg, transparent, var(--teal) 25%, #8B5CF6 70%, transparent);
+  opacity:.8;
+}
+.site-footer::after{
+  content:''; position:absolute; top:0; left:50%; translate:-50% 0;
+  width:min(900px, 90%); height:120px;
+  background:radial-gradient(ellipse at 50% 0%, rgba(18,168,242,.12), transparent 70%);
   pointer-events:none;
-  z-index:0;
-  mask-image:linear-gradient(to bottom, transparent, black 25%, black 100%);
-  -webkit-mask-image:linear-gradient(to bottom, transparent, black 25%, black 100%);
 }
 
 .footer-grid,

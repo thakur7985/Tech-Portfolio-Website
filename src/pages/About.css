@@ -9,6 +9,21 @@
 .about-section .eyebrow{ color: #0B1220; }
 .about-grid{
   display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;
+  position:relative; z-index:1;
+}
+
+/* circuit-board tree — faint watermark growing up behind the text column */
+.about-section{ position:relative; overflow:hidden; }
+.about-tree{
+  position:absolute; z-index:0;
+  left:max(-60px, calc(50% - 760px)); bottom:-40px;
+  width:min(620px, 55vw); height:auto;
+  opacity:.16;
+  pointer-events:none; user-select:none;
+}
+@media (max-width:900px){
+  /* single column: tree sits centred behind the copy */
+  .about-tree{ left:50%; translate:-50% 0; bottom:auto; top:0; width:min(520px, 110vw); opacity:.12; }
 }
 .about-grid h2{font-size:clamp(26px,3.4vw,38px); margin:14px 0 18px;}
 .about-copy{color:var(--text-soft); font-size:15.5px; max-width:480px; margin-bottom:26px;}

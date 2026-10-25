@@ -1,6 +1,8 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import GlobeMock from '../components/GlobeMock'
+import { gsap, useGSAP, MOTION_OK, splitWordsMasked, typeIn } from '../lib/gsap'
+// import GlobeMock from '../components/GlobeMock'
+import heroPhoto from '../assets/ai-hand-hero.webp'
 import Reveal from '../components/Reveal'
 import ParticleField from '../components/ParticleField'
 import ProjectsShowcase from '../components/ProjectsShowcase'
@@ -12,6 +14,7 @@ import posImg from '../assets/POS.webp'
 import realEstateImg from '../assets/real-estate.webp'
 import ecommerceImg from '../assets/ecommerce.webp'
 import erpImg from '../assets/ERP.webp'
+import circuitTree from '../assets/circuit-tree.webp'
 import './Home.css'
 import '../pages/About.css'
 import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt, FaMobileAlt, FaChartLine, FaBolt, FaShieldAlt, FaPaintBrush, FaHeadset } from "react-icons/fa";
@@ -75,10 +78,38 @@ const TECHS = [
 ]
 
 export default function Home() {
+  const heroRef = useRef(null)
+
+  // Hero intro: label types in → headline words rise out of a mask →
+  // copy + CTA fade up → globe scales in. Globe then drifts with scroll.
+  useGSAP(() => {
+    const mm = gsap.matchMedia()
+    mm.add(MOTION_OK, () => {
+      const title = splitWordsMasked('.hero h1')
+
+      gsap.timeline({ defaults: { ease: 'power4.out' } })
+        .add(typeIn(heroRef.current.querySelector('.eyebrow')))
+        .from(title.words, { yPercent: 115, duration: 1, stagger: 0.06 }, '-=0.6')
+        .from('.hero .lead', { y: 24, autoAlpha: 0, duration: 0.8 }, '-=0.6')
+        .from('.hero .hero-ctas', { y: 20, autoAlpha: 0, duration: 0.7 }, '-=0.55')
+        .from('.hero-photo', { scale: 1.18, autoAlpha: 0, duration: 2.2, ease: 'expo.out' }, 0)
+
+      // photo drifts down slower than the page → depth
+      gsap.to('.hero-photo', {
+        yPercent: 14,
+        ease: 'none',
+        scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true },
+      })
+    })
+    return () => mm.revert()
+  }, { scope: heroRef })
+
   return (
     <>
       {/* HERO */}
-      <section className="hero">
+      <section className="hero" ref={heroRef}>
+        <div className="hero-photo" style={{ backgroundImage: `url(${heroPhoto})` }} aria-hidden="true" />
+        <div className="hero-photo-fade" aria-hidden="true" />
         <div className="hero-bg" aria-hidden="true" />
         <div className="hero-inner wrap">
           <div>
@@ -93,7 +124,7 @@ export default function Home() {
               <Link to="/portfolio" className="btn btn-ghost">See recent work</Link>
             </div>
           </div>
-          <GlobeMock />
+          {/* <GlobeMock /> — previous hero visual, swapped for the full-bleed .hero-photo */}
         </div>
       </section>
 
@@ -113,6 +144,7 @@ export default function Home() {
 
       {/* ===================== ABOUT (home page preview) ===================== */}
       <section className="section about-section" id="about">
+        <img className="about-tree" src={circuitTree} alt="" aria-hidden="true" />
         <div className="wrap about-grid">
           <Reveal>
             <div className="eyebrow">About us </div>
@@ -238,6 +270,8 @@ export default function Home() {
 
       {/* ===================== CONTACT ===================== */}
       <section className="section contact-section" id="contact">
+        <div className="contact-glow contact-glow-a" aria-hidden="true" />
+        <div className="contact-glow contact-glow-b" aria-hidden="true" />
         <div className="wrap">
           <Reveal className="contact-head">
             <div className="eyebrow" style={{  }}>Let's connect</div>

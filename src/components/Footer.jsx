@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import logoIcon from '../assets/logo-icon.png'
 import './Footer.css'
-import footerWave from '../assets/footer-wave.webp'
 
 /* Add your real profile URLs here — an icon only shows once its href is filled in */
 const FOOT_SOCIALS = [
@@ -30,11 +29,6 @@ export default function Footer() {
   const year = new Date().getFullYear()
   return (
     <footer className="site-footer">
-      <div
-        className="footer-wave-bg"
-        style={{ backgroundImage: `url(${footerWave})` }}
-        aria-hidden="true"
-      />
 
       <div className="wrap footer-grid">
         <div className="footer-brand">

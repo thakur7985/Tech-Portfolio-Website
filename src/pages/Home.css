@@ -21,6 +21,35 @@
   z-index:1;
   display:grid; grid-template-columns:1.05fr 0.95fr; gap:40px; align-items:center;
 }
+
+/* full-bleed AI robot-hand photo — hand sits on the right, copy on the left */
+.hero{ min-height:min(820px, 100vh); display:flex; align-items:center; }
+.hero > .hero-inner{ width:100%; }
+.hero-photo{
+  /* a framed area on the right: below the navbar, clear of the copy.
+     All edges except the screen edge are feathered into the page. */
+  position:absolute; top:96px; bottom:24px; right:0; width:60%;
+  background-size:cover;
+  background-position:65% center;
+  -webkit-mask-image:
+    linear-gradient(90deg, transparent 0%, #000 24%),
+    linear-gradient(180deg, transparent 0%, #000 14%, #000 82%, transparent 100%);
+  -webkit-mask-composite:source-in;
+          mask-image:
+    linear-gradient(90deg, transparent 0%, #000 24%),
+    linear-gradient(180deg, transparent 0%, #000 14%, #000 82%, transparent 100%);
+          mask-composite:intersect;
+  will-change:transform;
+}
+/* blends the photo's lighter navy into the site ink: solid behind the copy,
+   clear over the hand, and fading to ink at the bottom edge */
+.hero-photo-fade{
+  position:absolute; inset:0; pointer-events:none;
+  background:
+    linear-gradient(90deg, var(--ink) 0%, rgba(6,12,34,.6) 40%, rgba(6,12,34,0) 56%),
+    linear-gradient(180deg, transparent 0%, transparent 80%, var(--ink) 100%);
+}
+.hero .hero-bg{ opacity:.45; }
 .hero-inner > div:first-child{
   max-width:600px;
 }
@@ -37,6 +66,9 @@
 /* ===== SERVICE STAT BAR — segmented card that bridges Home (dark) & About (white) ===== */
 .stat-bridge{
   position:relative;
+  /* sit above the next (positioned) about-section so the feature bar's
+     soft shadow isn't cut off into a hard line at the section edge */
+  z-index:2;
   /* top half sits on the dark home/hero background, bottom half on the white about background */
   background:linear-gradient(180deg, var(--ink) 0%, var(--ink) 50%, #ffffff 50%, #ffffff 100%);
   padding:60px 0;
@@ -189,7 +221,19 @@
 .cta-banner p{color:var(--text-soft); max-width:480px; margin:0 auto 28px;}
 
 @media (max-width:900px){
-  .hero{padding:100px 0 40px;}
+  /* text on top, the hand peeks up from the bottom of the hero */
+  .hero{padding:110px 0 300px; min-height:0;}
+  .hero-photo{
+    top:0; bottom:0; left:0; width:auto;
+    /* at least full width (no hard side edges on tablets), else 360px tall */
+    background-size:max(100%, 540px) auto; background-position:60% 100%; background-repeat:no-repeat;
+    /* fade the photo's top edge into the page instead of a hard line */
+    -webkit-mask-image:linear-gradient(0deg, #000 0, #000 210px, transparent 360px);
+            mask-image:linear-gradient(0deg, #000 0, #000 210px, transparent 360px);
+  }
+  .hero-photo-fade{
+    background:linear-gradient(180deg, transparent 0%, transparent 85%, var(--ink) 100%);
+  }
   .hero-inner{grid-template-columns:1fr;}
   .pf-grid{grid-template-columns:1fr;}
 }
@@ -292,7 +336,39 @@
 /* ============ CONTACT ============ */
 /* .contact-section{ background:linear-gradient(180deg, transparent, rgba(108,93,211,.06)); } */
 .contact-section{
-  background-color:#07132745;
+  position:relative; overflow:hidden;
+  background:var(--ink);
+}
+.contact-section > .wrap{ position:relative; z-index:1; }
+/* soft colour glows — teal behind the contact details, purple behind the
+   form (same palette as the hero's atom rings) */
+.contact-glow{
+  position:absolute; z-index:0; border-radius:50%;
+  filter:blur(90px); pointer-events:none;
+}
+.contact-glow-a{
+  width:520px; height:520px; left:-160px; top:22%;
+  background:radial-gradient(circle, rgba(18,168,242,.38), transparent 70%);
+}
+.contact-glow-b{
+  width:600px; height:600px; right:-180px; bottom:-120px;
+  background:radial-gradient(circle, rgba(139,92,246,.34), rgba(236,72,153,.12) 45%, transparent 72%);
+}
+/* form in a frosted glass card */
+.contact-form{
+  background:linear-gradient(160deg, rgba(22,35,63,.72), rgba(11,18,40,.55));
+  border:1px solid rgba(237,239,233,.12);
+  border-radius:22px;
+  padding:34px;
+  backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
+  box-shadow:0 30px 80px -30px rgba(0,0,0,.7), inset 0 1px 0 rgba(255,255,255,.06);
+}
+.contact-form .cf-inner input,
+.contact-form .cf-inner textarea{ background:rgba(6,12,34,.45); }
+@media (max-width:560px){
+  .contact-form{ padding:22px 18px; border-radius:18px; }
+  .contact-glow-a{ width:340px; height:340px; }
+  .contact-glow-b{ width:380px; height:380px; }
 }
 .contact-head{max-width:none; margin-bottom:56px; }
 .contact-head h2{ font-size:clamp(30px,5vw,52px); }
